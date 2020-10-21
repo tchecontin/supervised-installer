@@ -206,11 +206,13 @@ cat > "$CONFIG" <<- EOF
 }
 EOF
 
+sleep 5
+
 ##
 # Pull supervisor image
 info "Install supervisor Docker container"
-docker pull "$HASSIO_DOCKER:$HASSIO_VERSION" > /dev/null
-docker tag "$HASSIO_DOCKER:$HASSIO_VERSION" "$HASSIO_DOCKER:latest" > /dev/null
+docker pull homeassistant/amd64-hassio-supervisor:latest > /dev/null
+
 
 ##
 # Install Hass.io Supervisor
